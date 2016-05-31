@@ -1,0 +1,7 @@
+NEI <- readRDS("/home/swarnendu/Data Science/exploratory_data_analysis/week4/exdata_data_NEI_data/summarySCC_PM25.rds")
+print(head(NEI))
+emi1999<-aggregate(Emissions~year,NEI,FUN="sum")
+print(head(emi1999))
+with(NEI, plot(emi1999$year,emi1999$Emissions,main = "Emissions per year",type="l"))
+dev.copy(png,"/home/swarnendu/Data Science/exploratory_data_analysis/week4/exdata_data_NEI_data/plot1.png",height=480,width=480)
+dev.off()
